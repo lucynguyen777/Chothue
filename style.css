@@ -1,0 +1,99 @@
+:root{
+  --bg:#0f1724;
+  --card:#0b1220;
+  --muted:#9aa4b2;
+  --accent:#0ea5a4;
+  --accent-2:#06b6d4;
+  --white:#ffffff;
+  --glass: rgba(255,255,255,0.04);
+  --radius:12px;
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  color:var(--white);
+  background: linear-gradient(180deg,#071021 0%, #0b1220 100%);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+  font-size:16px;
+}
+
+/* Layout */
+.container{max-width:1100px;margin:0 auto;padding:1rem}
+.site-header{position:sticky;top:0;background:linear-gradient(90deg, rgba(6,7,10,0.45), rgba(6,6,10,0.25));backdrop-filter: blur(6px);z-index:50}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 0}
+.brand{font-weight:700;color:var(--white);text-decoration:none;font-size:1.05rem}
+.nav a{color:var(--muted);margin:0 0.75rem;text-decoration:none}
+.nav a:hover{color:var(--white)}
+.cta{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:0.5rem 0.85rem;border-radius:9px;color:var(--white);cursor:pointer}
+
+/* Hero */
+.hero{padding:2rem 0}
+.hero-grid{display:grid;gap:1.25rem;grid-template-columns:1fr 420px;align-items:center}
+.hero-left h1{font-size:2rem;margin:0 0 0.5rem}
+.lead{color:var(--muted);margin-bottom:1rem}
+.hero-ctas .btn{margin-right:0.5rem}
+.features{display:flex;gap:1rem;margin-top:1rem;list-style:none;padding:0;color:var(--muted)}
+
+/* Buttons */
+.btn{display:inline-block;padding:0.6rem 0.9rem;border-radius:10px;text-decoration:none;border:1px solid transparent}
+.btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#042b2b;font-weight:600}
+.btn-ghost{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,0.06)}
+
+/* Models */
+.section{padding:2rem 0}
+.models-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.card{background:var(--glass);padding:0;border-radius:12px;overflow:hidden;transition:transform .18s}
+.card img{width:100%;height:160px;object-fit:cover;display:block}
+.card h3{margin:0.75rem 1rem 0.25rem}
+.card p{margin:0 1rem 0.75rem;color:var(--muted);font-size:0.95rem}
+.card .meta{padding:0.6rem 1rem;border-top:1px solid rgba(255,255,255,0.03);color:var(--muted);font-size:0.85rem}
+
+/* Pricing */
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.price-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:1rem;border-radius:12px}
+.price-card.featured{box-shadow:0 10px 30px rgba(5,150,150,0.07);border:1px solid rgba(255,255,255,0.03)}
+.price{font-size:1.25rem;font-weight:700;color:var(--accent);margin:0.75rem 0}
+
+/* Booking */
+.booking-grid{display:grid;grid-template-columns:1fr 340px;gap:1rem}
+.booking-form-card{background:var(--card);padding:1rem;border-radius:12px}
+.booking-form-card h2{margin-top:0}
+label{display:block;margin-bottom:0.6rem;font-size:0.92rem}
+input[type="text"],input[type="tel"],input[type="email"],select,textarea,input[type="date"]{
+  width:100%;padding:0.6rem;border-radius:9px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--white)
+}
+.date-row{display:flex;gap:0.5rem}
+.form-actions{display:flex;gap:0.5rem;margin-top:0.5rem}
+.form-msg{margin-top:0.5rem;color:var(--accent)}
+
+/* Bookings list */
+.booking-summary{background:var(--glass);padding:1rem;border-radius:12px;color:var(--muted)}
+.booking-summary h3{margin-top:0}
+#bookingsList .booking-item{padding:0.6rem;border-radius:9px;background:rgba(255,255,255,0.02);margin-bottom:0.6rem;font-size:0.95rem}
+
+/* Contact */
+.contact-grid{display:flex;gap:1rem;align-items:center}
+.map-placeholder img{width:100%;height:160px;object-fit:cover;border-radius:10px}
+
+/* Footer */
+.site-footer{padding:1rem 0;border-top:1px solid rgba(255,255,255,0.02);margin-top:2rem}
+small{color:var(--muted)}
+
+/* Responsive */
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr}
+  .models-grid{grid-template-columns:repeat(2,1fr)}
+  .pricing-grid{grid-template-columns:1fr}
+  .booking-grid{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .models-grid{grid-template-columns:1fr}
+  .nav{display:none}
+  .brand{font-size:1rem}
+  .hero-left h1{font-size:1.5rem}
+}
